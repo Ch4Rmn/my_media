@@ -9,8 +9,13 @@
   {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> --}}
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
   <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('dist/css/index.css')}}">
+
 </head>
+
 <body class="hold-transition sidebar-mini">
+
+
 <div class="wrapper">
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <ul class="navbar-nav">
@@ -19,10 +24,10 @@
       </li>
     </ul>
   </nav>
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="#" class="brand-link">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4 shadow-lg">
+    <a href="{{ route('dashboard')}}" class="brand-link">
 
-      <span class="brand-text font-weight-light">My Media App </span>
+      <span class="brand-text font-weight-light text-warning  ">My Media App </span>
     </a>
     <div class="sidebar">
       <nav class="mt-2">
@@ -39,7 +44,7 @@
 
           <li class="nav-item">
             <a href="{{ route('admin#category')}}" class="nav-link">
-              <i class="fas fa-list"></i>
+              <i class="fas fa-list" ></i>
               <p>
                 Category
               </p>
@@ -48,7 +53,9 @@
 
           <li class="nav-item">
             <a href="{{ route('admin#list')}}" class="nav-link">
-              <i class="fas fa-pizza-slice ms-5"></i>
+              {{-- <i class="fas fa-list-ul"></i> --}}
+              <i class="fas fa-bars fa-rotate-270" style="color: #2b00ff;"></i>
+              {{-- <i class="fas fa-bars" style="color: #2b00ff;"></i> --}}
               <p>
                 List
               </p>
@@ -92,10 +99,15 @@
     </div>
   </aside>
 
-  <div class="content-wrapper">
+<marquee behavior="scroll" direction="left" style="margin-top:1.5%" >
+    <h1 id="messagesBox" class="text-white shadow-sm" style="font-size:1rem" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quisquam quas vitae explicabo repellendus neque voluptatem debitis voluptate corporis incidunt!
+    </h1>
+</marquee>
+
+  <div class="content-wrapper bg-dark-50 ">
     <section class="content">
       <div class="container-fluid">
-        <div class="row mt-4">
+        <div class="row mt-2" >
 
          @yield('content')
 
@@ -114,5 +126,6 @@
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{ asset('dist/js/adminlte.min.js')}}"></script>
 <script src="{{ asset('dist/js/demo.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
