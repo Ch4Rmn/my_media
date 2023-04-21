@@ -80,9 +80,21 @@
             </a>
           </li>
 
+            <li class="nav-item bg-danger">
+            <form action="{{ route('logout')}}" method='POST' >
+                @csrf
+            <button type="submit" class="nav-link bg-danger">
+              <i class="fas fa-sign-out-alt"></i>
+              <p>
+                Logout
+              </p>
+            </button>
+    </form>
+
+          </li>
 
 
-          <li class="nav-item ">
+          {{-- <li class="nav-item ">
             <form action="{{ route('logout')}}" method='POST' >
                 @csrf
                 <button type='submit' class="btn btn-danger text-white w-100 my-2 shadow-sm ">
@@ -93,14 +105,14 @@
         </button>
     </form>
 
-          </li>
+          </li> --}}
         </ul>
       </nav>
     </div>
   </aside>
 
 <marquee behavior="scroll" direction="left" style="margin-top:1.5%" >
-    <h1 id="messagesBox" class="text-white shadow-sm" style="font-size:1rem" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quisquam quas vitae explicabo repellendus neque voluptatem debitis voluptate corporis incidunt!
+    <h1 id="messagesBox" class="text-white shadow-sm" style="font-size:1rem" >BREAKING NEWS - In the 1890s, Shuman invented a method of strengthening glass with internal wires. The glass was more fire-resistant and also held together when it cracked, making it less likely to create dangerously sharp shards. Institutions such as schools and prisons loved it. Shuman, who had started his career in Virginia, then went to work for his uncle's metalwork factory in Philadelphia – the factory was casting a statue of Pennsylvania's founder William Penn, and needed to find a way to electroplate it with aluminium to protect it from the pollution-clogged air high above City Hall. At the same time, he started a company selling his patented "Safe-tee Glass".
     </h1>
 </marquee>
 
@@ -118,6 +130,14 @@
 
   <aside class="control-sidebar control-sidebar-dark">
   </aside>
+  <footer class="bg-dark text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #000000">
+    © 2023 Copyright:
+    <a class="text-danger" href="https://mdbootstrap.com/">https://github.com/Ch4Rmn</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 </div>
 
 
@@ -128,4 +148,8 @@
 <script src="{{ asset('dist/js/demo.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
+
 </html>
+
+

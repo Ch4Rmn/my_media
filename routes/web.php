@@ -69,7 +69,13 @@ Route::middleware([
 
 
 // Admin Post
-    Route::get('post' , [PostController::class ,'post'])->name('admin#post');
+    // Route::group('post' , function(){
+        // direct post
+    Route::get('post', [PostController::class, 'post'])->name('admin#post');
+    //create Post
+    Route::post('post/create',[PostController::class , 'createPost'])->name('create#post');
+
+
 
 // Admin TrendPost
     Route::get('trendPost', [TrendPostController::class ,'trendPost'])->name('admin#trendPost');

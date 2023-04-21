@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="col-12">
+<div class="col-12 mt-3">
     @if (Session::has('delete'))
 <div class="alert alert-danger alert-dismissible fade show shadow-sm mt-3" role="alert">
     {{Session::get('delete')}}
@@ -97,7 +97,7 @@
       <!-- /.card-body -->
     </div>
     <!-- /.card -->
-      {{-- {{ $userData->links() }} --}}
+      {{ $userData->links() }}
 
   </div>
 
