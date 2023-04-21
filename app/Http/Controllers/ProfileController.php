@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+// use RealRashid\SweetAlert\Facades\Alert;
+
 
 
 class ProfileController extends Controller
@@ -17,6 +19,7 @@ class ProfileController extends Controller
 
     $userData = User::select('id','name', 'email' ,'phone' , 'address', 'gender')->where('id' , $id)->first();
 
+
     return view('admin.Profile.index' , compact('userData'));
 }
 
@@ -25,6 +28,7 @@ class ProfileController extends Controller
        $user = $this->getUserData($request);
         $validator = $this->validatorCheck($request);
 
+        // Alert::success('userData update','userData updated sir');
     //    dd($user);
      User::where('id', Auth::user()->id)->update($user);
     return back()->with(['updateSuccess'=>'Update Success! OK sir.']);

@@ -11,6 +11,7 @@ class ListController extends Controller
     public function list() {
         $userData = User::orderBy('created_at', 'desc')->paginate(3);
         // dd($userData);
+        // paginate appends
         $userData->appends(request()->all());
         return view('admin.List.list' , compact('userData'));
     }

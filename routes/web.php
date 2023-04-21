@@ -53,12 +53,23 @@ Route::middleware([
 
 
 //Admin Category
-    Route::get('category',[CategoryController::class ,'category'])->name('admin#category');
+// Route::prefix('admin')->group(function() {
+        Route::get('category', [CategoryController::class, 'category'])->name('admin#category');
+        // create Category
+        Route::post('category/create', [CategoryController::class, 'categoryCreate'])->name('admin#categoryCreate');
+        // delete
+        Route::get('category/create/{id}', [CategoryController::class, 'categoryDelete'])->name('admin#categoryDelete');
+        //Search
+        Route::post('category/search',[CategoryController::class , 'adminSearch'])->name('admin#Search');
+        //edit
+        Route::get('category/editPage/{id}' , [CategoryController::class , 'categoryEditPage'])->name('category#EditPage');
+        //upload image
+        Route::post('category/edit/{id}', [CategoryController::class, 'categoryEdit'])->name('category#Edit');
+    });
+
 
 // Admin Post
     Route::get('post' , [PostController::class ,'post'])->name('admin#post');
 
 // Admin TrendPost
     Route::get('trendPost', [TrendPostController::class ,'trendPost'])->name('admin#trendPost');
-});
-

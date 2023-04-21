@@ -21,3 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('test', function () {
     return "hello world";
 });
+
+ Route::post('login',[AuthController::class, 'login' ])->name('user#Login');
+
+ Route::get('category' ,function(){
+    return response()->json(
+        'ok'
+    );
+ });
